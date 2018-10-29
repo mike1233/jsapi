@@ -40,11 +40,11 @@ function getUsers() {
             //document.getElementById("myDiv").innerHTML = "";
             for (let i = 0; i < myJson.response.length; i++) {
                 var x = document.createElement("p");
-                var name = JSON.stringify(myJson.response[i].name);
-                var email = JSON.stringify(myJson.response[i].email);
+                var name = JSON.stringify(myJson.response[i].customerName);
+                var phone = JSON.stringify(myJson.response[i].phone);
                 console.log(name)
                 x.setAttribute("id", name);
-                x.innerHTML = name + " " + email;
+                x.innerHTML = name + " " + phone;
                 console.log(x)
                 document.getElementById("myDiv").appendChild(x);
             }

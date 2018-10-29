@@ -9,8 +9,6 @@ var cors = require('cors');
 
 var newUser = require('./routes/1-10/2addUser');
 var users = require('./routes/1-10/1getAllUsers');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -20,7 +18,7 @@ app.use(function(req, res, next){
 	res.locals.connection = mysql.createConnection({
 		host     : 'localhost',
 		user     : 'root',
-		database : 'laravel'
+		database : 'classicmodels'
 	});
 	res.locals.connection.connect();
 	next();
@@ -35,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+
 app.use('/1-10/1getAllUsers', users);
 app.use('/1-10/2addUser', newUser);
 

@@ -34,22 +34,29 @@ function getUsers() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("data").innerHTML = "";
             // Typical action to be performed when the document is ready:
             var res = xhttp.responseText;
             var myJson = JSON.parse(res)
-            //document.getElementById("myDiv").innerHTML = "";
             for (let i = 0; i < myJson.response.length; i++) {
-                var x = document.createElement("p");
+                var z = document.createElement("tr")
+                var x = document.createElement("td");
+                var y = document.createElement("td");
                 var name = JSON.stringify(myJson.response[i].customerName);
                 var phone = JSON.stringify(myJson.response[i].phone);
-                console.log(name)
+                var cNumber = JSON.stringify(myJson.response[i].customerNumber)
+                z.setAttribute("id", cNumber)
                 x.setAttribute("id", name);
-                x.innerHTML = name + " " + phone;
-                console.log(x)
-                document.getElementById("myDiv").appendChild(x);
+                y.setAttribute("id", phone);
+                x.innerHTML = name;
+                y.innerHTML = phone;
+                //console.log(x)
+                document.getElementById("data").appendChild(z);
+                document.getElementById(cNumber).appendChild(x);
+                document.getElementById(cNumber).appendChild(y);
             }
             console.log(myJson)
-            document.getElementById("demobutton").innerHTML = "Request worked!";
+            //document.getElementById("demobutton").innerHTML = "Request worked!";
         }
     };
     xhttp.open("GET", "http://localhost:3001/1-10/1getAllUsers", true);

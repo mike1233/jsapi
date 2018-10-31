@@ -39,20 +39,30 @@ function getUsers() {
             var res = xhttp.responseText;
             var myJson = JSON.parse(res)
             for (let i = 0; i < myJson.response.length; i++) {
-                var z = document.createElement("tr")
+                var z = document.createElement("tr");
+                var a = document.createElement("td");
+                var b = document.createElement("td");
                 var x = document.createElement("td");
                 var y = document.createElement("td");
                 var name = JSON.stringify(myJson.response[i].customerName);
                 var phone = JSON.stringify(myJson.response[i].phone);
                 var cNumber = JSON.stringify(myJson.response[i].customerNumber)
+                var lName = JSON.stringify(myJson.response[i].contactLastName)
+                var fName = JSON.stringify(myJson.response[i].contactFirstName)
                 z.setAttribute("id", cNumber)
+                a.setAttribute("id", lName);
+                b.setAttribute("id", fName);
                 x.setAttribute("id", name);
                 y.setAttribute("id", phone);
                 x.innerHTML = name;
                 y.innerHTML = phone;
+                a.innerHTML = lName;
+                b.innerHTML = fName;
                 //console.log(x)
                 document.getElementById("data").appendChild(z);
                 document.getElementById(cNumber).appendChild(x);
+                document.getElementById(cNumber).appendChild(a);
+                document.getElementById(cNumber).appendChild(b);
                 document.getElementById(cNumber).appendChild(y);
             }
             console.log(myJson)

@@ -77,9 +77,13 @@ function addUser() {
     var xhttp = new XMLHttpRequest();
     var body = {};
     var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var fName = document.getElementById("fName").value;
+    var lName = document.getElementById("lName").value;
     body.name = name;
-    body.email = email;
+    body.phone = phone;
+    body.fName = fName;
+    body.lName = lName;
     console.log(body)
     xhttp.onreadystatechange = function () {
       
@@ -90,5 +94,21 @@ function addUser() {
     xhttp.open("POST", "http://localhost:3001/1-10/2addUser", true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.send(JSON.stringify(body));
+}
+
+function validateForm()
+{
+    var a=document.forms["add"]["name"].value;
+    var b=document.forms["add"]["phone"].value;
+    var c=document.forms["add"]["fName"].value;
+    var d=document.forms["add"]["lName"].value;
+    if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="")
+    {
+        alert("Please Fill All Required Fields");
+        return false;
+    }
+    else{
+        addUser();
+    }
 }
 

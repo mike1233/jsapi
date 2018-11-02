@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Api tests</title>
-  </head>
-  <body onload="getUsers()">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">My Api</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Api tests</title>
+</head>
+
+<body onload="getUsers()">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">My Api</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Work</a></li>
+        <li><a href="#">In</a></li>
+        <li><a href="#">Progress</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div id="myDiv" class="col s8">
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+
+        <tbody id="data">
+        </tbody>
+      </table>
+    </div>
+    <div class="col s4">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Add Customer</span>
+          <div id="form">
+              <form name="add" action="#" method="POST">
+                Company Name: <input type="text" name="name" id="name" required><br>
+                Phone: <input type="text" name="phone" id="phone" required><br>
+                First Name: <input type="text" name="fName" id="fName" required><br>
+                Last Name: <input type="text" name="lName" id="lName" required><br>
+              </form>
+            </div>
+        </div>
+        <div class="card-action">
+          <button class="btn waves-effect waves-light" onclick="return validateForm()">add user</button>
+        </div>
       </div>
-    </nav>
-    <div id="myDiv">
-        <table class="highlight">
-            <thead>
-              <tr>
-                  <th>Company</th>
-                  <th>Last Name</th>
-                  <th>First Name</th>
-                  <th>Phone</th>
-              </tr>
-            </thead>
-    
-            <tbody id="data">
-            </tbody>
-          </table>
     </div>
-    <!-- <button type="button" onclick="myFunction()">Try it</button> -->
-    <!-- <button type="button" onclick="getUsers()">get users</button> -->
-  
-    <div id="form">
-        <form action="#" method="POST">
-          name: <input type="text" name="name" id="name"><br>
-          email: <input type="email" name="email" id="email"><br>
-          <button type="button" onclick="addUser()">add user</button>
-        </form>
-    </div>
-  </body>
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  </div>
+  <!-- <button type="button" onclick="myFunction()">Try it</button> -->
+  <!-- <button type="button" onclick="getUsers()">get users</button> -->
+</body>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
 </html>

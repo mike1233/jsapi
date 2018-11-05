@@ -27,6 +27,12 @@ app.use(function(req, res, next){
 	next();
 });
 
+//cors
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -67,5 +73,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(3001, () => {
+  console.log('Listening on localhost:3001')
+})
 
 module.exports = app;

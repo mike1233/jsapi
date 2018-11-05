@@ -3,12 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var mysql = require("mysql");
 var cors = require('cors');
 
+
+// api routes
 var newUser = require('./routes/1-10/2addUser');
 var users = require('./routes/1-10/1getAllUsers');
+
+
 
 var app = express();
 
@@ -23,9 +26,21 @@ app.use(function(req, res, next){
 	res.locals.connection.connect();
 	next();
 });
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
+
+// index page 
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+// about page 
+app.get('/about', function(req, res) {
+  res.render('about');
+});
 
 app.use(logger('dev'));
 app.use(express.json());

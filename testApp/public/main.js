@@ -89,6 +89,7 @@ function addUser() {
       
         if (this.readyState == 4 && this.status == 200) {
             alert(xhttp.responseText);
+            getUsers();
         }
     };
     xhttp.open("POST", "http://localhost:3001/1-10/2addUser", true);

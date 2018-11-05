@@ -7,16 +7,7 @@
 </head>
 
 <body onload="getUsers()">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">My Api</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Work</a></li>
-        <li><a href="#">In</a></li>
-        <li><a href="#">Progress</a></li>
-      </ul>
-    </div>
-  </nav>
+  <% include partials/navbar %>
   <div class="row">
     <div id="myDiv" class="col s8">
       <table class="highlight">
@@ -55,10 +46,7 @@
   <!-- <button type="button" onclick="myFunction()">Try it</button> -->
   <!-- <button type="button" onclick="getUsers()">get users</button> -->
 </body>
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script type="text/javascript" src="main.js"></script>
+
+<% include partials/scripts %>
 
 </html>
